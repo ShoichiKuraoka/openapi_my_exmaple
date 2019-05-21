@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 
 
@@ -22,6 +23,24 @@ open class KariAPI {
         }
     }
 
+    /**
+     Get Kari Information.
+     - parameter identifier: (path) Identifier of Kari to return 
+     - returns: Observable<Kari>
+     */
+    open class func getKari(identifier: String) -> Observable<Kari> {
+        return Observable.create { observer -> Disposable in
+            getKari(identifier: identifier) { data, error in
+                if let error = error {
+                    observer.on(.error(error))
+                } else {
+                    observer.on(.next(data!))
+                }
+                observer.on(.completed)
+            }
+            return Disposables.create()
+        }
+    }
 
     /**
      Get Kari Information.
