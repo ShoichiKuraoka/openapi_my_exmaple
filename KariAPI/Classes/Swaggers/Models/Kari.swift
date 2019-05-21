@@ -16,7 +16,8 @@ public struct Kari: Codable {
         case lead = "lead"
         case mark = "mark"
         case allround = "allround"
-    }    public var identifier: String
+    }
+    public var identifier: String
     public var createdAt: Date
     public var updatedAt: Date
     /** 名前 */
