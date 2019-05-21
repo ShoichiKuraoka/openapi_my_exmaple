@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/ShoichiKuraoka/openapi_my_exmaple'
   s.summary = 'KariAPI'
   s.source_files = 'KariAPI/Classes/**/*.swift'
-  s.dependency 'Alamofire', '~> 4.5.0'
+  s.dependency 'Alamofire'
 end
