@@ -35,12 +35,12 @@ open class KariAPI {
         let identifierPreEscape = "\(identifier)"
         let identifierPostEscape = identifierPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{identifier}", with: identifierPostEscape, options: .literal, range: nil)
-        let URLString = SwaggerClientAPI.basePath + path
+        let URLString = KariAPIAPI.basePath + path
         let parameters: [String:Any]? = nil
 
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<Kari>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Kari>.Type = KariAPIAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

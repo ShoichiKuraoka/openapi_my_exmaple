@@ -1,12 +1,14 @@
 Pod::Spec.new do |s|
-  s.name = 'SwaggerClient'
+  s.name = 'KariAPI'
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.version = '0.0.1'
-  s.source = { :git => 'git@github.com:swagger-api/swagger-mustache.git', :tag => 'v1.0.0' }
+  s.source = { :git => "https://github.com/ShoichiKuraoka/openapi_my_exmaple.git"}
   s.authors = 'Swagger Codegen'
   s.license = 'Proprietary'
-  s.source_files = 'SwaggerClient/Classes/**/*.swift'
+  s.homepage = 'https://github.com/ShoichiKuraoka/openapi_my_exmaple'
+  s.summary = 'KariAPI'
+  s.source_files = 'KariAPI/Classes/**/*.swift'
   s.dependency 'Alamofire', '~> 4.5.0'
 end
