@@ -13,3 +13,8 @@
   - podspecは自動生成の対象なので直接変更しないこと。
   - 編集できる項目は、`openapi-generator config-help -g swift4`で確認可能。
 2. Swiftコードとpodspecを生成する。（Swift/CodeGenerate.shを実行）
+
+## 3. pod取り込み
+podfileに下記を追加。
+
+`pod '(ProjectName)', :git => '(gitURL)'`
