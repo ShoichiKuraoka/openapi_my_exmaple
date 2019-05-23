@@ -18,3 +18,7 @@
 podfileに下記を追加。
 
 `pod '(ProjectName)', :git => '(gitURL)'`
+
+---
+
+※必要な最小構成は、ブランチ`first`を参照のこと。
