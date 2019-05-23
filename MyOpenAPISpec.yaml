@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: Kari API & Model
+  version: 0.0.1a
+servers:
+- url: https://karikari.jp/v1
+tags:
+- name: kari
+  description: Access to Kari orders.
+paths:
+  /kari/kari/{identifier}:
+    get:
+      tags:
+      - kari
+      summary: Get Kari Information.
+      operationId: getKari
+      parameters:
+      - name: identifier
+        in: path
+        description: Identifier of Kari to return
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kari'
+              examples:
+                sasdfad:
+                  $ref: '#/components/examples/kariExample'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Kari not found
+          content: {}
+        default:
+          description: Unexpected Error
+components:
+  schemas:
+
+    Kari:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: 名前
+          example: 藤根俊貴
+        legType:
+          type: string
+          description: 脚質（逃、追、両）
+          enum:
+          - lead
+          - mark
+          - allround
+          example: allround
+      description: かりかりモデル
+  
+  examples:
+    
+    kariExample:
+      value:
+        name: 倉岡
+        legType: mark
+  

@@ -1,0 +1,6 @@
+{
+  "podSource": "{ :git => \"https://github.com/ShoichiKuraoka/openapi_my_exmaple.git\"}",
+  "projectName": "KariAPI",
+  "podVersion": "0.0.1",
+  "responseAs": "RxSwift"
+}
